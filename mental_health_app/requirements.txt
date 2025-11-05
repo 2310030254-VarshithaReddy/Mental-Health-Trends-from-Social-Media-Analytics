@@ -27,3 +27,5 @@ plotly
 
 # Utility
 joblib
+gunicorn
+
