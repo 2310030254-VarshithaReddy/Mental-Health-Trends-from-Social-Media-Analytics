@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile
+    container_name: mental_health_backend
+    working_dir: /app/backend
+    command: uvicorn main:app --host 0.0.0.0 --port 8000
+    ports:
+      - "8000:8000"
+    volumes:
+      - ../data:/app/data
+
+  dashboard:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile
+    container_name: mental_health_dashboard
+    working_dir: /app/dashboard
+    command: streamlit run app.py --server.port 8501 --server.address 0.0.0.0
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+    volumes:
+      - ../data:/app/data

@@ -1,0 +1,29 @@
+# Core dependencies
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+nltk
+textblob
+
+# Machine learning and NLP
+spacy
+transformers
+torch
+tqdm
+
+# Data collection
+requests
+tweepy
+beautifulsoup4
+
+# Environment and configuration
+python-dotenv
+
+# Visualization / Dashboard (optional)
+streamlit
+plotly
+
+# Utility
+joblib
